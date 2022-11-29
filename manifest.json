@@ -1,0 +1,44 @@
+{
+    "name": "Video_downloader",
+    "description": "B站抖音快手视频下载",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "declarative_net_request": {
+        "rule_resources": []
+    },
+    "permissions": [
+        "tabs",
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "notifications"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "js/b.js"
+            ],
+            "matches": [
+                "https://www.bilibili.com/video/*"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "js": [
+                "js/douyin.js"
+            ],
+            "matches": [
+                "https://www.douyin.com/video/*"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "js": [
+                "js/ks.js"
+            ],
+            "matches": [
+                "https://www.kuaishou.com/short-video/*"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
